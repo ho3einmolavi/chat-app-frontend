@@ -1,6 +1,6 @@
 import { createApp } from 'vue'
 import App from './App.vue'
+import Toaster from '@meforma/vue-toaster';
 import router from './router/index'
-const app = createApp(App)
-app.use(router)
-app.mount('#app')
+
+createApp(App).use(Toaster).use(router).mount('#app')

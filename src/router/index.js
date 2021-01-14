@@ -1,10 +1,31 @@
-import { createWebHistory, createRouter } from "vue-router";
-import HelloWorld from "../components/HelloWorld";
+import {createWebHistory, createRouter} from "vue-router";
+import login from "../pages/login";
+import register from "../pages/register";
+import dashboard from "../pages/dashboard";
 
 const routes = [
     {
         path: "/",
-        component: HelloWorld,
+        redirect: to => {
+            const token = localStorage.getItem('token')
+            if (token) {
+                return '/dashboard'
+            } else {
+                return '/login'
+            }
+        }
+    },
+    {
+        path: "/login",
+        component: login,
+    },
+    {
+        path: "/register",
+        component: register,
+    },
+    {
+        path: '/dashboard',
+        component: dashboard
     }
 ];
 
