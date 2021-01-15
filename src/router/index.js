@@ -2,6 +2,7 @@ import {createWebHistory, createRouter} from "vue-router";
 import login from "../pages/login";
 import register from "../pages/register";
 import dashboard from "../pages/dashboard";
+import chatroom from "../pages/chatroom";
 
 const routes = [
     {
@@ -26,6 +27,10 @@ const routes = [
     {
         path: '/dashboard',
         component: dashboard
+    },
+    {
+        path: '/chatroom/:id',
+        component: chatroom
     }
 ];
 

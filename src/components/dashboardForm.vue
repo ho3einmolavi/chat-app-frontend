@@ -19,22 +19,14 @@
                 <hr>
                 <div class="mt-2">
                   <ul class="list-group list-group-flush">
-                    <li class="list-group-item">
+                    <li class="list-group-item" v-for="(item,index) in chatrooms" :key="index">
                       <div class="list-group-item list-group-item-action">
-                        My List Item One
-                        <input type="button" value="Join" class="mt-2 btn btn-pill btn-block btn-outline-danger">
-                      </div>
-                    </li>
-                    <li class="list-group-item">
-                      <div class="list-group-item list-group-item-action">
-                        My List Item One
-                        <input type="button" value="Join" class="mt-2 btn btn-pill btn-block btn-outline-danger">
-                      </div>
-                    </li>
-                    <li class="list-group-item">
-                      <div class="list-group-item list-group-item-action">
-                        My List Item One
-                        <input type="button" value="Join" class="mt-2 btn btn-pill btn-block btn-outline-danger">
+                        {{ item.name }}
+                        <router-link :to="/chatroom/ + item._id">
+                          <button type="button" value="Join" class="mt-2 btn btn-pill btn-block btn-outline-danger">
+                            join
+                          </button>
+                        </router-link>
                       </div>
                     </li>
                   </ul>
@@ -52,7 +44,8 @@
 
 <script>
 export default {
-  name: "dashboardForm"
+  name: "dashboardForm",
+  props: ['chatrooms']
 }
 </script>
 

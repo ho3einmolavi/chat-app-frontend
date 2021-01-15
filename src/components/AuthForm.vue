@@ -81,7 +81,7 @@ export default {
           password: this.password
         }
       }).then(res => {
-        localStorage.setItem('token', JSON.stringify(res.data.token))
+        localStorage.setItem('token', res.data.token)
         this.$toast.success("you logged in", {
           position: 'top-right'
         })
@@ -112,7 +112,7 @@ export default {
           password: this.password,
         }
       }).then(res => {
-        localStorage.setItem('token', JSON.stringify(res.data.token))
+        localStorage.setItem('token', res.data.token)
         this.$toast.success("you are registered", {
           position: 'top-right',
           duration: 3500
